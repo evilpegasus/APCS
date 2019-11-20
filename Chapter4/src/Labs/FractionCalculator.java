@@ -45,5 +45,4 @@ public class FractionCalculator{
         }
         System.out.println(result.num + " / " + result.den);
     }
-
 }
