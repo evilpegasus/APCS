@@ -43,4 +43,8 @@ public class MiniQuiz
       else
          System.out.println ("No, the answer is " + q2.getAnswer());
    }
+
+   public void askQuestion(String question, String answer, int level) {
+
+   }
 }
