@@ -21,6 +21,16 @@ public class Account
     name = owner;
     acctNum = number;
   }
+  public Account (double initBal, String owner) {
+    balance = initBal;
+    name = owner;
+    acctNum = Math.round( 999999 * Math.random());
+  }
+  public Account (String owner) {
+    balance = 0;
+    name = owner;
+    acctNum = Math.round( 999999 * Math.random());
+  }
 
   //----------------------------------------------
   // Checks to see if balance is sufficient for withdrawal.
@@ -30,6 +40,13 @@ public class Account
   {
     if (balance >= amount)
        balance -= amount;
+    else
+       System.out.println("Insufficient funds");
+  }
+  public void withdraw(double amount, double fee)
+  {
+    if (balance >= amount + fee)
+       balance -= (amount + fee);
     else
        System.out.println("Insufficient funds");
   }
