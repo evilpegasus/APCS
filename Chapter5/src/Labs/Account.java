@@ -11,6 +11,7 @@ public class Account
   private double balance;
   private String name;
   private long acctNum;
+  private static int numAccounts;
 
   //----------------------------------------------
   //Constructor -- initializes balance, owner, and account number
@@ -20,16 +21,19 @@ public class Account
     balance = initBal;
     name = owner;
     acctNum = number;
+    numAccounts ++;
   }
   public Account (double initBal, String owner) {
     balance = initBal;
     name = owner;
     acctNum = Math.round( 999999 * Math.random());
+    numAccounts ++;
   }
   public Account (String owner) {
     balance = 0;
     name = owner;
     acctNum = Math.round( 999999 * Math.random());
+    numAccounts ++;
   }
 
   //----------------------------------------------
@@ -74,5 +78,28 @@ public class Account
 	return "Name:" + name + 
         "\nAccount Number: " + acctNum +
         "\nBalance: " + balance; 
+  }
+  public static int getNumAccounts() {
+    return numAccounts;
+  }
+  public void close() {
+    name = "CLOSED";
+    balance = 0.0;
+    numAccounts --;
+  }
+  public static Account Consolidate (Account acct1, Account acct2) {
+    if (acct1.acctNum != acct2.acctNum) {
+      if (acct1.name == acct2.name) {
+        acct1.close();
+        acct2.close();
+        return new Account(acct1.balance + acct2.balance, acct1.name);
+      } else {
+        System.out.println("Conslidate failed, wrong account name");
+        return null;
+      }
+    } else {
+      System.out.println("Conslidate failed, same account number");
+      return null;
+    }
   }
 }
