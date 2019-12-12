@@ -1,4 +1,3 @@
-package Labs;
 public class Compare3 {
     public Compare3() {
 
