@@ -11,6 +11,8 @@ public class MiniQuiz
    //-----------------------------------------------------------------
    //  Presents a short quiz.
    //-----------------------------------------------------------------
+
+   static Scanner scan = new Scanner(System.in);
    public static void main (String[] args)
    {
       Question q1 = new Question("", "");
@@ -49,7 +51,6 @@ public class MiniQuiz
 
    private static void askQuestion(Question q, String question, String answer, int level) {
       String possible;
-      Scanner scan = new Scanner(System.in);
       q = new Question (question, answer);
       q.setComplexity (level);
       System.out.print (q.getQuestion());
