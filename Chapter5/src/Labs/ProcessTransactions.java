@@ -79,6 +79,5 @@ public class ProcessTransactions
 		System.out.print("\nContinue to next day?(y/n)");
 		nextDay = scan.next();
 	}
-	
     }
 }
