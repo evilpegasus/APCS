@@ -23,10 +23,10 @@ public class ProcessTransactions
 	acct2 = new Account(1000, "Joe", 456);
 
 	System.out.println("The following accounts are available:\n");
-	acct1.printSummary();
+	System.out.println(acct1.toString());
 
 	System.out.println();
-	acct2.printSummary();
+	System.out.println(acct2.toString());
 
 	while (keepGoing.equals("y") || keepGoing.equals("y"))
 	    {
@@ -65,10 +65,12 @@ public class ProcessTransactions
 
 
 	//Print number of deposits
+	System.out.println("numDeposits: " + Account.getNumDeposits());
 	//Print number of withdrawals
+	System.out.println("numWithdrawals: " + Account.getNumWithdrawals());
 	//Print total amount of deposits
+	System.out.println("totalDeposits: " + Account.getTotalDeposits());
 	//Print total amount of withdrawals
-
-
+	System.out.println("totalWithdrawals: " + Account.getTotalWithdrawals());
     }
 }
