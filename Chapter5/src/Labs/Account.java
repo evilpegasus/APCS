@@ -92,7 +92,8 @@ public class Account
       if (acct1.name == acct2.name) {
         acct1.close();
         acct2.close();
-        return new Account(acct1.balance + acct2.balance, acct1.name);
+        Account a = new Account(acct1.balance + acct2.balance, acct1.name);
+        return a;
       } else {
         System.out.println("Conslidate failed, wrong account name");
         return null;

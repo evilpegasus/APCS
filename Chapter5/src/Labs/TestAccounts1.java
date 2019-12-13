@@ -23,6 +23,7 @@ public class TestAccounts1
 		System.out.println("Now there are " + Account.getNumAccounts() + 
 				   " accounts");
 		}
+	scan.nextLine();
 	System.out.println("Enter name 1: ");
 	String name1 = scan.nextLine();
 	System.out.println("Enter name 2: ");
@@ -35,8 +36,9 @@ public class TestAccounts1
 	Account z = new Account(100, name3);
 
 	x.close();
-	System.out.println(y.toString());
 	System.out.println(x.toString());
+	System.out.println(y.toString());
+	System.out.println(z.toString());
 	System.out.println(Account.Consolidate(y, z).toString());
 	}
 }
