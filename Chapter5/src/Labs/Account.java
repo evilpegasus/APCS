@@ -14,9 +14,9 @@ public class Account
   private static int numAccounts;
 
   private static int numDeposits;
-  private static int totalDeposits;
+  private static double totalDeposits;
   private static int numWithdrawals;
-  private static int totalWithdrawals;
+  private static double totalWithdrawals;
 
 
   //----------------------------------------------
@@ -131,5 +131,11 @@ public class Account
   }
   public long getAcctNumber() {
 	  return acctNum;
+  }
+  public static void reset() {
+    numDeposits = 0;
+    totalDeposits = 0;
+    numWithdrawals = 0;
+    totalWithdrawals = 0;
   }
 }

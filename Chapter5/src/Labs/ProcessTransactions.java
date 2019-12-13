@@ -12,13 +12,14 @@ public class ProcessTransactions
 
 	Account acct1, acct2;           //two test accounts
 	String keepGoing = "y";         //more transactions?
+	String nextDay = "y";
 	String action;                  //deposit or withdraw
 	double amount;                  //how much to deposit or withdraw
 	long acctNumber;                //which account to access
 
 	Scanner scan = new Scanner(System.in);
-
-	//Create two accounts
+	while (nextDay.equalsIgnoreCase("y")) {
+		//Create two accounts
 	acct1 = new Account(1000, "Sue", 123);
 	acct2 = new Account(1000, "Joe", 456);
 
@@ -28,7 +29,7 @@ public class ProcessTransactions
 	System.out.println();
 	System.out.println(acct2.toString());
 
-	while (keepGoing.equals("y") || keepGoing.equals("y"))
+	while (keepGoing.equals("y") || keepGoing.equals("Y"))
 	    {
 		//get account number, what to do, and amount
 		System.out.print("\nEnter the number of the account you would like to access: ");
@@ -64,13 +65,20 @@ public class ProcessTransactions
 	    }
 
 
-	//Print number of deposits
-	System.out.println("numDeposits: " + Account.getNumDeposits());
-	//Print number of withdrawals
-	System.out.println("numWithdrawals: " + Account.getNumWithdrawals());
-	//Print total amount of deposits
-	System.out.println("totalDeposits: " + Account.getTotalDeposits());
-	//Print total amount of withdrawals
-	System.out.println("totalWithdrawals: " + Account.getTotalWithdrawals());
+		//Print number of deposits
+		System.out.println("numDeposits: " + Account.getNumDeposits());
+		//Print number of withdrawals
+		System.out.println("numWithdrawals: " + Account.getNumWithdrawals());
+		//Print total amount of deposits
+		System.out.println("totalDeposits: " + Account.getTotalDeposits());
+		//Print total amount of withdrawals
+		System.out.println("totalWithdrawals: " + Account.getTotalWithdrawals());
+		Account.reset();
+		keepGoing = "y";
+
+		System.out.print("\nContinue to next day?(y/n)");
+		nextDay = scan.next();
+	}
+	
     }
 }
