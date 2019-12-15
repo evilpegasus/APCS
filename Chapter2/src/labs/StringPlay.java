@@ -1,3 +1,4 @@
+/*
 // **************************************************
 //   StringPlay.java
 //
@@ -27,3 +28,4 @@ public class StringPlay
       System.out.println ("The final string is " + change3);
     }
 }
+*/

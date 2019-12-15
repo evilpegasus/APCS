@@ -1,3 +1,4 @@
+/*
 package labs;
 // ***************************************************************
 //   Salary.java
@@ -40,3 +41,4 @@ public class Salary2
        System.out.println();
     }
 }
+*/

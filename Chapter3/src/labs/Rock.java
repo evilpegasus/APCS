@@ -1,3 +1,4 @@
+/*
 package labs;
 // ****************************************************************
 //   Rock.java
@@ -41,3 +42,4 @@ public class Rock
 		//...  Fill in rest of code
     }
 }
+*/
