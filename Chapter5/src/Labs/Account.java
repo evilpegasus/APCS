@@ -102,4 +102,24 @@ public class Account
       return null;
     }
   }
+  public void transfer (Account acct, double amount) {
+    if (getBalance() >= amount) {
+      withdraw(amount);
+      acct.deposit(amount);
+      System.out.println(acct.toString());
+      System.out.println(toString());
+    } else {
+      System.out.println("Insufficient funds");
+    }
+  }
+  public static void transfer (Account from, Account to, double amount) {
+    if (from.getBalance() >= amount) {
+      from.withdraw(amount);
+      to.deposit(amount);
+      System.out.println(from.toString());
+      System.out.println(to.toString());
+    } else {
+      System.out.println("Insufficient funds");
+    }
+  }
 }
