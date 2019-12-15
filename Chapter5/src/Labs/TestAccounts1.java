@@ -38,5 +38,6 @@ public class TestAccounts1
 	System.out.println(y.toString());
 	System.out.println(x.toString());
 	System.out.println(Account.Consolidate(y, z).toString());
+	scan.close();
 	}
 }

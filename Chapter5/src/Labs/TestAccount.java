@@ -47,5 +47,6 @@ public class TestAccount
 	System.out.println(acct.getBalance());
 
 	System.out.println("\nBye!");
+	scan.close();
     }
 }

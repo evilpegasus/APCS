@@ -39,5 +39,6 @@ public class TestNames {
         } else {
             System.out.println("Names are not the same");
         }
+        scan.close();
     }
 }

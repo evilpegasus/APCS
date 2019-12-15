@@ -36,5 +36,6 @@ public class TransferTest {
             scan.nextLine();
             again = scan.nextLine();
         }
+        scan.close();
     }
 }
