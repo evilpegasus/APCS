@@ -1,4 +1,3 @@
-/*
 //*******************************************************
 // ProcessTransactions.java
 //
@@ -42,21 +41,21 @@ public class ProcessTransactions
 
 		if (amount > 0)
 		    if (acctNumber == acct1.getAcctNumber())
-			if (action.equals("w") || action.equals("W"))
-			    acct1.withdraw(amount);
-			else if (action.equals("d") || action.equals("D"))
-			    acct1.deposit(amount);
-			else 
-			    System.out.println("Sorry, invalid action.");
+				if (action.equals("w") || action.equals("W"))
+			    	acct1.withdraw(amount);
+				else if (action.equals("d") || action.equals("D"))
+			    	acct1.deposit(amount);
+				else 
+				    System.out.println("Sorry, invalid action.");
 		    else if (acctNumber == acct2.getAcctNumber())
-			if (action.equals("w") || action.equals("W"))
-			    acct1.withdraw(amount);
-			else if (action.equals("d") || action.equals("D"))
-			    acct1.deposit(amount);
-			else 
-			    System.out.println("Sorry, invalid action.");
+				if (action.equals("w") || action.equals("W"))
+				    acct1.withdraw(amount);
+				else if (action.equals("d") || action.equals("D"))
+			    	acct1.deposit(amount);
+				else 
+				    System.out.println("Sorry, invalid action.");
 		    else
-			System.out.println("Sorry, invalid account number.");
+				System.out.println("Sorry, invalid account number.");
 		else
 			System.out.println("Sorry, amount must be > 0.");
 
@@ -82,4 +81,3 @@ public class ProcessTransactions
 	}
     }
 }
-*/

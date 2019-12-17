@@ -137,4 +137,25 @@ public class Account
       System.out.println("Insufficient funds");
     }
   }
+  public long getAcctNumber() {
+	  return acctNum;
+  }
+  public static int getNumDeposits() {
+	  return numDeposits;
+  }
+  public static int getNumWithdrawals() {
+	  return numWithdrawals;
+  }
+  public static double getTotalDeposits() {
+	  return totalDeposits;
+  }
+  public static double getTotalWithdrawals() {
+	  return totalWithdrawals;
+  }
+  public static void reset() {
+    numDeposits = 0;
+    totalDeposits = 0;
+    numWithdrawals = 0;
+    totalWithdrawals = 0;
+  }
 }
