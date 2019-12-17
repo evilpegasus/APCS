@@ -1,3 +1,4 @@
+/*
 package labs;
 
 // *******************************************************************
@@ -32,3 +33,4 @@ public class RightTriangle
       System.out.println ("Length of the hypotenuse: " + hypotenuse);
     }
 }
+*/

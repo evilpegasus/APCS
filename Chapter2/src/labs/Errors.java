@@ -1,3 +1,4 @@
+/*
 package labs;
 // File:     Errors.java
 // Purpose:  A program with lots of syntax errors
@@ -26,3 +27,4 @@ public class errors
                            numSquared);
 
 }
+*/

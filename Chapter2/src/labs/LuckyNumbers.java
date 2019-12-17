@@ -1,3 +1,4 @@
+/*
 package labs;
 
 // **************************************************
@@ -33,3 +34,4 @@ public class LuckyNumbers
                             + ", and " + lucky3);
     }
 }
+*/

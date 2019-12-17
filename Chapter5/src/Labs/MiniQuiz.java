@@ -18,7 +18,7 @@ public class MiniQuiz
       Question q1 = new Question("", "");
       Question q2 = new Question("", "");
       askQuestion(q1, "What is the capital of Jamaica?", "Kingston", 4);
-      askQuestion(q1, "Which is worse, ignorance or apathy?", "I don't know and I don't care", 10);
+      askQuestion(q2, "Which is worse, ignorance or apathy?", "I don't know and I don't care", 10);
       // String possible;
 
       // Scanner scan = new Scanner(System.in);

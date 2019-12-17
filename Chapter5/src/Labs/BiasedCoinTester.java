@@ -29,5 +29,6 @@ public class BiasedCoinTester {
         System.out.println("Bias x: " + xCount);
         System.out.println("Bias y: " + yCount);
         System.out.println("Bias z: " + zCount);
+        scan.close();
     }
 }

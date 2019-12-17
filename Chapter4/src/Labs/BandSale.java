@@ -34,5 +34,6 @@ public class BandSale {
         System.out.println("Total Sales by " + one);
         System.out.println("Total Sales by " + two);
 
+        scan.close();
     }
 }

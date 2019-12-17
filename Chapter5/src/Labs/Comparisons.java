@@ -20,5 +20,6 @@ public class Comparisons {
         val3 = scan.nextInt();
 
         System.out.println("The largest is " + Compare3.largest(val1, val2, val3));
+        scan.close();
     }
 }

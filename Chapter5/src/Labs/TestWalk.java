@@ -29,6 +29,7 @@ public class TestWalk
 			   "a space between: ");
 	x = scan.nextInt();
 	y = scan.nextInt();
-
+	
+	scan.close();
     }
 }

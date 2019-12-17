@@ -44,5 +44,6 @@ public class FractionCalculator{
             throw new IllegalArgumentException("Error: Operation not recognized");
         }
         System.out.println(result.num + " / " + result.den);
+        scan.close();
     }
 }
