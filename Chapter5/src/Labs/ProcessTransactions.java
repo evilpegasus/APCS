@@ -1,4 +1,3 @@
-/*
 //*******************************************************
 // ProcessTransactions.java
 //
@@ -13,23 +12,24 @@ public class ProcessTransactions
 
 	Account acct1, acct2;           //two test accounts
 	String keepGoing = "y";         //more transactions?
+	String nextDay = "y";
 	String action;                  //deposit or withdraw
 	double amount;                  //how much to deposit or withdraw
 	long acctNumber;                //which account to access
 
 	Scanner scan = new Scanner(System.in);
-
-	//Create two accounts
+	while (nextDay.equalsIgnoreCase("y")) {
+		//Create two accounts
 	acct1 = new Account(1000, "Sue", 123);
 	acct2 = new Account(1000, "Joe", 456);
 
 	System.out.println("The following accounts are available:\n");
-	acct1.printSummary();
+	System.out.println(acct1.toString());
 
 	System.out.println();
-	acct2.printSummary();
+	System.out.println(acct2.toString());
 
-	while (keepGoing.equals("y") || keepGoing.equals("y"))
+	while (keepGoing.equals("y") || keepGoing.equals("Y"))
 	    {
 		//get account number, what to do, and amount
 		System.out.print("\nEnter the number of the account you would like to access: ");
@@ -41,21 +41,21 @@ public class ProcessTransactions
 
 		if (amount > 0)
 		    if (acctNumber == acct1.getAcctNumber())
-			if (action.equals("w") || action.equals("W"))
-			    acct1.withdraw(amount);
-			else if (action.equals("d") || action.equals("D"))
-			    acct1.deposit(amount);
-			else 
-			    System.out.println("Sorry, invalid action.");
+				if (action.equals("w") || action.equals("W"))
+			    	acct1.withdraw(amount);
+				else if (action.equals("d") || action.equals("D"))
+			    	acct1.deposit(amount);
+				else 
+				    System.out.println("Sorry, invalid action.");
 		    else if (acctNumber == acct2.getAcctNumber())
-			if (action.equals("w") || action.equals("W"))
-			    acct1.withdraw(amount);
-			else if (action.equals("d") || action.equals("D"))
-			    acct1.deposit(amount);
-			else 
-			    System.out.println("Sorry, invalid action.");
+				if (action.equals("w") || action.equals("W"))
+				    acct1.withdraw(amount);
+				else if (action.equals("d") || action.equals("D"))
+			    	acct1.deposit(amount);
+				else 
+				    System.out.println("Sorry, invalid action.");
 		    else
-			System.out.println("Sorry, invalid account number.");
+				System.out.println("Sorry, invalid account number.");
 		else
 			System.out.println("Sorry, amount must be > 0.");
 
@@ -65,12 +65,19 @@ public class ProcessTransactions
 	    }
 
 
-	//Print number of deposits
-	//Print number of withdrawals
-	//Print total amount of deposits
-	//Print total amount of withdrawals
+		//Print number of deposits
+		System.out.println("numDeposits: " + Account.getNumDeposits());
+		//Print number of withdrawals
+		System.out.println("numWithdrawals: " + Account.getNumWithdrawals());
+		//Print total amount of deposits
+		System.out.println("totalDeposits: " + Account.getTotalDeposits());
+		//Print total amount of withdrawals
+		System.out.println("totalWithdrawals: " + Account.getTotalWithdrawals());
+		Account.reset();
+		keepGoing = "y";
 
-
+		System.out.print("\nContinue to next day?(y/n)");
+		nextDay = scan.next();
+	}
     }
 }
-*/

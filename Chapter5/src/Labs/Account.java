@@ -13,6 +13,12 @@ public class Account
   private long acctNum;
   private static int numAccounts;
 
+  private static int numDeposits;
+  private static double totalDeposits;
+  private static int numWithdrawals;
+  private static double totalWithdrawals;
+
+
   //----------------------------------------------
   //Constructor -- initializes balance, owner, and account number
   //----------------------------------------------
@@ -42,15 +48,21 @@ public class Account
   //----------------------------------------------
   public void withdraw(double amount)
   {
-    if (balance >= amount)
-       balance -= amount;
+    if (balance >= amount){
+      numWithdrawals++;
+      totalWithdrawals += amount;
+      balance -= amount;
+    }
     else
        System.out.println("Insufficient funds");
   }
   public void withdraw(double amount, double fee)
   {
-    if (balance >= amount + fee)
-       balance -= (amount + fee);
+    if (balance >= amount + fee) {
+      numWithdrawals++;
+      totalWithdrawals += amount;
+      balance -= (amount + fee);
+    }
     else
        System.out.println("Insufficient funds");
   }
@@ -60,6 +72,8 @@ public class Account
   //----------------------------------------------
   public void deposit(double amount)
   {
+    numDeposits ++;
+    totalDeposits += amount;
     balance += amount;
   }
 
@@ -92,7 +106,8 @@ public class Account
       if (acct1.name == acct2.name) {
         acct1.close();
         acct2.close();
-        return new Account(acct1.balance + acct2.balance, acct1.name);
+        Account a = new Account(acct1.balance + acct2.balance, acct1.name);
+        return a;
       } else {
         System.out.println("Conslidate failed, wrong account name");
         return null;
@@ -121,5 +136,26 @@ public class Account
     } else {
       System.out.println("Insufficient funds");
     }
+  }
+  public long getAcctNumber() {
+	  return acctNum;
+  }
+  public static int getNumDeposits() {
+	  return numDeposits;
+  }
+  public static int getNumWithdrawals() {
+	  return numWithdrawals;
+  }
+  public static double getTotalDeposits() {
+	  return totalDeposits;
+  }
+  public static double getTotalWithdrawals() {
+	  return totalWithdrawals;
+  }
+  public static void reset() {
+    numDeposits = 0;
+    totalDeposits = 0;
+    numWithdrawals = 0;
+    totalWithdrawals = 0;
   }
 }
