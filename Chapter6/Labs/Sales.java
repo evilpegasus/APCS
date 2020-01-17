@@ -14,6 +14,8 @@ public class Sales
 	final int SALESPEOPLE = 5;
 	int[] sales = new int[SALESPEOPLE];
 	int sum;
+	int maxSale = 0;
+	int minSale = 0;
 
 	Scanner scan = new Scanner(System.in);
 
@@ -21,6 +23,23 @@ public class Sales
 	    {
 		System.out.print("Enter sales for salesperson " + i + ": ");
 		sales[i] = scan.nextInt();
+		//max
+		if (i > 0) {
+			if(sales[i] > sales[i-1]) {
+				maxSale = i;
+			}
+		}else {
+			maxSale = i;
+		}
+
+		//min
+		if (i > 0) {
+			if(sales[i] < sales[i-1]) {
+				minSale = i;
+			}
+		}else {
+			minSale = i;
+	    }
 	    }
 
 	System.out.println("\nSalesperson   Sales");
@@ -33,5 +52,12 @@ public class Sales
 	    }
 
 	System.out.println("\nTotal sales: " + sum);
+
+	//Average sales:
+	System.out.println("Avg sales: " + (double)sum/5);
+	//Max sale:
+	System.out.println("Max sale: Salesperson" + maxSale + " with $" + sales[maxSale]);
+	System.out.println("Min sale: Salesperson" + minSale + " with $" + sales[minSale]);
+
     }
 }
