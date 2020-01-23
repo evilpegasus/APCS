@@ -59,5 +59,15 @@ public class Sales
 	System.out.println("Max sale: Salesperson" + maxSale + " with $" + sales[maxSale]);
 	System.out.println("Min sale: Salesperson" + minSale + " with $" + sales[minSale]);
 
+
+	//user input
+	System.out.println("Enter a minimum");
+	int input = scan.nextInt();
+	
+	for(int i = 0; i < sales.length; i++) {
+		if (sales[i] >= input) {
+			System.out.println(i + ": $" + sales[i]);
+		}
+	}
     }
 }
