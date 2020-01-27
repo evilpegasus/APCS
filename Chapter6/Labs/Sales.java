@@ -11,17 +11,21 @@ public class Sales
 {
     public static void main(String[] args)
     {
-	final int SALESPEOPLE = 5;
-	int[] sales = new int[SALESPEOPLE];
 	int sum;
 	int maxSale = 0;
 	int minSale = 0;
 
 	Scanner scan = new Scanner(System.in);
+	System.out.println("How many salespeople?");
+	final int SALESPEOPLE = scan.nextInt();
+	int[] sales = new int[SALESPEOPLE];
+
+
+
 
 	for (int i=0; i<sales.length; i++)
 	    {
-		System.out.print("Enter sales for salesperson " + i + ": ");
+		System.out.print("Enter sales for salesperson " + (i+1) + ": ");
 		sales[i] = scan.nextInt();
 		//max
 		if (i > 0) {
@@ -47,7 +51,7 @@ public class Sales
 	sum = 0;
 	for (int i=0; i<sales.length; i++)
 	    {
-		System.out.println("     " + i + "         " + sales[i]);
+		System.out.println("     " + (i+1) + "         " + sales[i]);
 		sum += sales[i];
 	    }
 
@@ -56,8 +60,8 @@ public class Sales
 	//Average sales:
 	System.out.println("Avg sales: " + (double)sum/5);
 	//Max sale:
-	System.out.println("Max sale: Salesperson" + maxSale + " with $" + sales[maxSale]);
-	System.out.println("Min sale: Salesperson" + minSale + " with $" + sales[minSale]);
+	System.out.println("Max sale: Salesperson" + (maxSale+1) + " with $" + sales[maxSale]);
+	System.out.println("Min sale: Salesperson" + (minSale+1) + " with $" + sales[minSale]);
 
 
 	//user input
@@ -66,7 +70,7 @@ public class Sales
 	
 	for(int i = 0; i < sales.length; i++) {
 		if (sales[i] >= input) {
-			System.out.println(i + ": $" + sales[i]);
+			System.out.println((i+1) + ": $" + sales[i]);
 		}
 	}
     }
