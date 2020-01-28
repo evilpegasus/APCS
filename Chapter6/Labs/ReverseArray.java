@@ -17,5 +17,12 @@ public class ReverseArray {
 
         System.out.println(Arrays.toString(a));
 
+        //reverse it
+        for(int i = 0; i < (int)((a.length-1)/2); i++) {
+            String temp = a[i];
+            a[i] = a[a.length - i - 1];
+            a[a.length - i - 1] = temp;
+        }
+        System.out.print(Arrays.toString(a));
     }
 }
