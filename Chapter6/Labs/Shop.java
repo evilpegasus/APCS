@@ -34,7 +34,7 @@ public class Shop
 		quantity = scan.nextInt();
 
 		// *** create a new item and add it to the cart
-
+		
 
 
 		// *** print the contents of the cart object using println

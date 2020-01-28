@@ -11,6 +11,7 @@ public class ShoppingCart
     private int itemCount;      // total number of items in the cart
     private double totalPrice;  // total price of items in the cart
     private int capacity;       // current cart capacity
+    Item[] cart;
 
     // -----------------------------------------------------------
     //  Creates an empty shopping cart with a capacity of 5 items.
@@ -19,7 +20,8 @@ public class ShoppingCart
     {
 	capacity = 5;
 	itemCount = 0;
-	totalPrice = 0.0;
+    totalPrice = 0.0;
+    cart = new Item[capacity];
     }
 
     // -------------------------------------------------------
@@ -27,6 +29,9 @@ public class ShoppingCart
     // -------------------------------------------------------
     public void addToCart(String itemName, double price, int quantity)
     {
+        cart[itemCount] = new Item(itemName, price, quantity);
+        totalPrice += quantity * price;
+        itemCount += quantity;
     }
 
     // -------------------------------------------------------
@@ -54,5 +59,13 @@ public class ShoppingCart
     // ---------------------------------------------------------
     private void increaseSize()
     {
+        Item[] temp = new Item[cart.length];
+        for (int i = 0; i < cart.length; i++)  {
+            temp[i] = cart[i];
+        }
+        cart = new Item[3 + cart.length];
+        for (int i = 0; i < temp.length; i++)  {
+            cart[i] = temp[i];
+        }
     }
 }
