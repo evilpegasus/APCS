@@ -28,9 +28,10 @@ public class IntegerList
     //-------------------------------------------------------
     public void randomize()
     {
-	for (int i=0; i<list.length; i++)
+	for (int i=0; i < list.length; i++)
         list[i] = (int)(Math.random() * 100) + 1;
     count = list.length;
+    System.out.println("Count: " + count);
     }
 
     //-------------------------------------------------------
@@ -39,7 +40,8 @@ public class IntegerList
     public void print()
     {
 	for (int i=0; i<list.length; i++)
-	    System.out.println(i + ":\t" + list[i]);
+        System.out.println(i + ":\t" + list[i]);
+    System.out.println("Count: " + count);    
     }
     //-------------------------------------------------------
     //double size
@@ -53,7 +55,7 @@ public class IntegerList
         for (int i = 0; i < temp.length; i++)  {
             list[i] = temp[i];
         }
-        System.out.println(Arrays.toString(list));
+        //System.out.println(Arrays.toString(list));
      }
 
      public void addElement(int newVal) {
@@ -62,12 +64,33 @@ public class IntegerList
         }
         list[count] = newVal;
         count++;
+        System.out.println("Count: " + count);
      }
 
+     public void removeAll(int val) {
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] == val) {
+                for (int j = i; j < (list.length - 1); j++) {
+                    list[j] = list[j + 1];
+                }
+                count--;
+                list[count] = 0;
+                i--;
+            }
+        }
+        System.out.println("Count: " + count);
+     }
+     
      public void removeFirst(int val) {
         for (int i = 0; i < list.length; i++) {
             if (list[i] == val) {
-                
+                for (int j = i; j < (list.length - 1); j++) {
+                    list[j] = list[j + 1];
+                }
+                count--;
+                list[count] = 0;
+                System.out.println("Count: " + count);
+                break;
             }
         }
      }
