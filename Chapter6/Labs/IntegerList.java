@@ -65,6 +65,10 @@ public class IntegerList
      }
 
      public void removeFirst(int val) {
-
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] == val) {
+                
+            }
+        }
      }
 }
