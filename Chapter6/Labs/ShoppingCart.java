@@ -27,11 +27,11 @@ public class ShoppingCart
     // -------------------------------------------------------
     //  Adds an item to the shopping cart.
     // -------------------------------------------------------
-    public void addToCart(String itemName, double price, int quantity)
+    public void addToCart(Item item)
     {
-        cart[itemCount] = new Item(itemName, price, quantity);
-        totalPrice += quantity * price;
-        itemCount += quantity;
+        cart[itemCount] = item;
+        totalPrice += item.getQuantity() * item.getPrice();
+        itemCount += 1;
     }
 
     // -------------------------------------------------------

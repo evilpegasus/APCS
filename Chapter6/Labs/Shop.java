@@ -17,6 +17,7 @@ public class Shop
 	String itemName;
 	double itemPrice;
 	int quantity;
+	ShoppingCart cart = new ShoppingCart();
 
  	Scanner scan = new Scanner(System.in);
 
@@ -34,16 +35,17 @@ public class Shop
 		quantity = scan.nextInt();
 
 		// *** create a new item and add it to the cart
-		
-
+		item = new Item(itemName, itemPrice, quantity);
+		cart.addToCart(item);
 
 		// *** print the contents of the cart object using println
-
+		System.out.println(cart.toString());
 
 		System.out.print ("Continue shopping (y/n)? ");
+		scan.nextLine();
 		keepShopping = scan.nextLine();
 	    }
-	while (keepShopping.equals("y"));
+	while (keepShopping.equalsIgnoreCase("y"));
 
     }
 }
