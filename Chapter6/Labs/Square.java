@@ -26,7 +26,11 @@ public class Square
     //--------------------------------------
     public int sumRow(int row)
     {
-
+      int rowSum = 0;
+      for (int i = 0; i < square.length; i++){
+        rowSum += square[row][i];
+      }
+      return rowSum;
     }
 
     //--------------------------------------
@@ -34,7 +38,11 @@ public class Square
     //--------------------------------------
     public int sumCol(int col)
     {
-
+      int colSum = 0;
+      for (int i = 0; i < square.length; i++){
+        colSum += square[i][col];
+      }
+      return colSum;
     }
 
     //--------------------------------------
@@ -42,7 +50,11 @@ public class Square
     //--------------------------------------
     public int sumMainDiag()
     {
-
+      int sum = 0;
+      for (int i = 0; i <square.length; i++) {
+        sum += square[i][i];
+      }
+      return sum;
     }
 
     //--------------------------------------
@@ -50,7 +62,11 @@ public class Square
     //--------------------------------------
     public int sumOtherDiag()
     {
-
+      int sum = 0;
+      for (int i = 0; i <square.length; i++) {
+        sum += square[i][square.length - 1 - i];
+      }
+      return sum;
     }
 
     //--------------------------------------
@@ -59,7 +75,17 @@ public class Square
     //--------------------------------------
     public boolean magic()
     {
-
+      int sum = sumMainDiag();
+      if(sum != sumOtherDiag()) {
+        return false;
+      } else {
+        for (int i = 0; i < square.length; i++) {
+          if (sumCol(i) != sum || sumRow(i) != sum) {
+            return false;
+          }
+        }
+        return true;
+      }
     }
 
     //--------------------------------------
@@ -78,7 +104,12 @@ public class Square
     //--------------------------------------
     public void printSquare()
     {
-
+      for (int i = 0; i < square.length; i++) {
+        for (int j = 0; j < square.length; j++) {
+          System.out.print(square[i][j] + " ");
+        }
+        System.out.println();
+      }
     }
 
 }
