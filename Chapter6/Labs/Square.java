@@ -18,7 +18,7 @@ public class Square
     //--------------------------------------
     public Square(int size)
     {
-
+      square = new int[size][size];
     }
 
     //--------------------------------------
