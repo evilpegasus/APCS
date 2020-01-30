@@ -8,7 +8,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Shop
+public class Shop67
 {
     public static void main (String[] args)
     {
@@ -17,7 +17,7 @@ public class Shop
 	String itemName;
 	double itemPrice;
 	int quantity;
-	ArrayList<Item> cart = new ArrayList<Item>();
+	ShoppingCart cart = new ShoppingCart();
 
  	Scanner scan = new Scanner(System.in);
 
@@ -36,20 +36,10 @@ public class Shop
 
 		// *** create a new item and add it to the cart
 		item = new Item(itemName, itemPrice, quantity);
-		cart.add(item);
+		cart.addToCart(item);
 
 		// *** print the contents of the cart object using println
-		//System.out.println(cart.toString());
-		double totalPrice = 0;
-		System.out.println("Name\tUnit Price\tQuantity\tTotal Price");
-		for (int i = 0; i < cart.size(); i++) {
-			System.out.println(cart.get(i).getName() + "\t" + cart.get(i).getPrice() + "\t\t" + cart.get(i).getQuantity() + "\t\t" + cart.get(i).getQuantity()*cart.get(i).getPrice());
-			totalPrice += cart.get(i).getQuantity()*cart.get(i).getPrice();
-		}
-		System.out.println("Total Price " + totalPrice);
-		
-
-
+		System.out.println(cart.toString());
 
 		System.out.print ("Continue shopping (y/n)? ");
 		scan.nextLine();
