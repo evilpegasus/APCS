@@ -17,7 +17,7 @@ public class Shop
 	String itemName;
 	double itemPrice;
 	int quantity;
-	ArrayList cart = new ArrayList<Item>();
+	ArrayList<Item> cart = new ArrayList<Item>();
 
  	Scanner scan = new Scanner(System.in);
 
@@ -39,6 +39,17 @@ public class Shop
 		cart.add(item);
 
 		// *** print the contents of the cart object using println
+		//System.out.println(cart.toString());
+		double totalPrice = 0;
+		System.out.println("Name\tUnit Price\tQuantity\tTotal Price");
+		for (int i = 0; i < cart.size(); i++) {
+			System.out.println(cart.get(i).getName() + "\t" + cart.get(i).getPrice() + "\t\t" + cart.get(i).getQuantity() + "\t\t" + cart.get(i).getQuantity()*cart.get(i).getPrice());
+			totalPrice += cart.get(i).getQuantity()*cart.get(i).getPrice();
+		}
+		System.out.println("Total Price " + totalPrice);
+		
+
+
 
 		System.out.print ("Continue shopping (y/n)? ");
 		scan.nextLine();
