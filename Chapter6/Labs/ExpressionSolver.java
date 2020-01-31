@@ -10,13 +10,26 @@ import static java.lang.System.*;
 public class ExpressionSolver
 {
 	//add in instance variables
+	ArrayList<String> expression = new ArrayList<String>();
 
 	public ExpressionSolver(String s)
 	{
+		expression.clear();
+		for (int i = 1; i < s.length(); i++) {
+			if (s.charAt(i) != ' ') {
+				expression.add(String.valueOf(s.charAt(i)));
+			}
+		}
 	}
 
 	public void setExpression(String s)
 	{
+		expression.clear();
+		for (int i = 1; i < s.length(); i++) {
+			if (s.charAt(i) != ' ') {
+				expression.add(String.valueOf(s.charAt(i)));
+			}
+		}
 	}
 
 	public void solveExpression()
