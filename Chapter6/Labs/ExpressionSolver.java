@@ -15,7 +15,7 @@ public class ExpressionSolver
 	public ExpressionSolver(String s)
 	{
 		expression.clear();
-		for (int i = 1; i < s.length(); i++) {
+		for (int i = 0; i < s.length(); i++) {
 			if (s.charAt(i) != ' ') {
 				expression.add(String.valueOf(s.charAt(i)));
 			}
@@ -25,7 +25,7 @@ public class ExpressionSolver
 	public void setExpression(String s)
 	{
 		expression.clear();
-		for (int i = 1; i < s.length(); i++) {
+		for (int i = 0; i < s.length(); i++) {
 			if (s.charAt(i) != ' ') {
 				expression.add(String.valueOf(s.charAt(i)));
 			}
@@ -34,10 +34,11 @@ public class ExpressionSolver
 
 	public void solveExpression()
 	{
+		for ()
 	}
 
 	public String toString( )
 	{
-		return "";
+		return expression.toString();
 	}
 }

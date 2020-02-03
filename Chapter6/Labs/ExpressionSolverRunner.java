@@ -11,5 +11,28 @@ public class ExpressionSolverRunner
 {
 	public static void main( String args[] )
 	{
+		ExpressionSolver es = new ExpressionSolver("3 + 5");
+		es.solveExpression();
+		System.out.println(es.toString());
+		es.setExpression("3 * 5");
+		es.solveExpression();
+		System.out.println(es.toString());
+		es.setExpression("3 - 5");
+		es.solveExpression();
+		System.out.println(es.toString());
+		es.setExpression("3 / 5");
+		es.solveExpression();
+		System.out.println(es.toString());
+		es.setExpression("5 / 5 * 2 + 8 / 2 + 5");
+		es.solveExpression();
+		System.out.println(es.toString());
+		es.setExpression("5 * 5 + 2 / 2 - 8 + 5 * 5 – 2");
+		es.solveExpression();
+		System.out.println(es.toString());
+		
+		
+		
+		
+
 	}
 }
