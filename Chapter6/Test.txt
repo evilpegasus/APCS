@@ -1,0 +1,24 @@
+{
+int whiteCount = 0;
+	for (int i = 0; i < pixelValues.length; i++) {
+		for (int j = 0; j < pixelValues[i].length; j++) {
+			if (pixelValue[i][j] == WHITE) {
+				whiteCount++;
+			}
+		}
+	}
+return whiteCount;
+}
+
+//**********************************************************
+
+{
+	for (int i = 0; i < pixelValues.length - 2; i++) {
+		for (int j = 0; j < pixelValues[i].length - 2; j++) {
+			pixelValues[i][j] = pixelValues[i][j] - pixelValues[i + 2][j + 2];
+			if (pixelValues[i][j] < 0) {
+				pixelValues[i][j] = BLACK;
+			}
+		}
+	}
+}
