@@ -20,6 +20,7 @@ public class ExpressionSolver
 				expression.add(String.valueOf(s.charAt(i)));
 			}
 		}
+		System.out.print(s + " = ");
 	}
 
 	public void setExpression(String s)
@@ -30,19 +31,43 @@ public class ExpressionSolver
 				expression.add(String.valueOf(s.charAt(i)));
 			}
 		}
+		System.out.print(s + " = ");
 	}
 
 	public void solveExpression()
 	{
-		//Convert to ArrayList
-            ArrayList<String> a = new ArrayList<String>();
-            for (int i = 0; i < expression.length(); i++) {
-                    if (expression.charAt(i) != ' ') {
-                            a.add(String.valueOf(expression.charAt(i)));
+		for(int i = 0; i < expression.size(); i++) {
+        	if(expression.get(i).equals("*")) {
+				expression.set(i - 1, Integer.toString((Integer.parseInt(expression.get(i - 1)) * Integer.parseInt(expression.get(i + 1)))));
+        		expression.remove(i + 1);
+        		expression.remove(i);
+				i--;
+			}
+        	else if(expression.get(i).equals("/")) {
+				expression.set(i - 1, Integer.toString((Integer.parseInt(expression.get(i - 1)) / Integer.parseInt(expression.get(i + 1)))));
+        		expression.remove(i + 1);
+        		expression.remove(i);
+				i--;
+			}
+		}
+      	for(int i = 0; i<expression.size(); i++) {
+			if(expression.get(i).equals("+")) {
+				expression.set(i - 1, Integer.toString((Integer.parseInt(expression.get(i - 1)) + Integer.parseInt(expression.get(i + 1)))));
+        		expression.remove(i + 1);
+        		expression.remove(i);
+				i--;
+			}
+			else if(expression.get(i).equals("-")) {
+				expression.set(i - 1, Integer.toString((Integer.parseInt(expression.get(i - 1)) - Integer.parseInt(expression.get(i + 1)))));
+        		expression.remove(i + 1);
+        		expression.remove(i);
+				i--;
+			}
+		}
 	}
 
 	public String toString( )
 	{
-		return expression.toString();
+		return expression.get(0);
 	}
 }
