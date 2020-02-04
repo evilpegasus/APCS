@@ -11,39 +11,39 @@ import static java.lang.System.*;
 public class ExpressionSolver
 {
 	//add in instance variables
-	String expression;
-	Integer answer;
+	ArrayList<String> expression = new ArrayList<String>();
 
 	public ExpressionSolver(String s)
 	{
-		expression = s;
+		expression.clear();
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) != ' ') {
+				expression.add(String.valueOf(s.charAt(i)));
+			}
+		}
 	}
 
 	public void setExpression(String s)
 	{
-		expression = s;
+		expression.clear();
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) != ' ') {
+				expression.add(String.valueOf(s.charAt(i)));
+			}
+		}
 	}
 
 	public void solveExpression()
 	{
 		//Convert to ArrayList
-		ArrayList<String> a = new ArrayList<String>();
-		for (int i = 0; i < expression.length(); i++) {
-			if (expression.charAt(i) != ' ') {
-				a.add(String.valueOf(expression.charAt(i)));
-			}
-		}
-		System.out.println(Arrays.toString(a.toArray()));
-
-		//compute * and /
-		if (a.indexOf("*") > 0 || a.indexOf("/") > 0) {
-			
-		}
+            ArrayList<String> a = new ArrayList<String>();
+            for (int i = 0; i < expression.length(); i++) {
+                    if (expression.charAt(i) != ' ') {
+                            a.add(String.valueOf(expression.charAt(i)));
 	}
 
 	public String toString( )
 	{
-		return null;
-		//return (expression + " = " + Integer.toString(answer));
+		return expression.toString();
 	}
 }
