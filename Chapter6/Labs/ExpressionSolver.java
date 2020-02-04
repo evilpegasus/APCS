@@ -4,7 +4,6 @@
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.*;
 import static java.lang.Integer.*;
 import static java.lang.System.*;
 
