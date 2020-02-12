@@ -9,16 +9,18 @@ public class SortIntList extends IntList{
         if (numElements == list.length)
 	    System.out.println("Can't add, list is full");
 	    else {
-		    for (int i = 0; i < numElements; i++) {
-                if (x < list[i + 1] || numElements == 0) {
-                    for (int j = numElements + 1; j > i; j--) {
-                        list[j] = list[j - 1];
-                    }
-                    list[i] = x;
-                }
-            }
+            list[numElements] = x;
+		    Arrays.sort(list, 0, numElements + 1);
             numElements++;
-	    }
-        
+            // for (int i = 0; i < numElements; i++) {
+            //     if (list[i] < list[i + 1]) {
+            //         for (int j = numElements; j > i; j++) {
+            //             list[j] = list [j - 1];
+            //         }
+            //         list[i] = x;
+            //         break;
+            //     }
+            //     numElements++;
+        }
     }
 }
