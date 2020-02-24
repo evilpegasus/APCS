@@ -3,11 +3,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 
-public class Essay extends TestQuestion {
+public class MultChoice extends TestQuestion {
 
 
     protected String testQuestion;
-    private int numLines;
+    private int numChoices;
+    private String choices[];
+
     public void readQuestion() {
         File file = new File("testbank.dat");
         try {
@@ -15,14 +17,18 @@ public class Essay extends TestQuestion {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        numLines = Integer.toString(scan.nextLine());
+        numChoices = Integer.toString(scan.nextLine());
         testQuestion = scan.nextLine();
+        String choices[] = new String[numChoices];
+        for (int i = 0; i < numChoices; i++) {
+            choices[i] = scan.NextLine();
+        }
     }
 
     public String toString() {
         String returned = testQuestion;
-        for (int i = 0; i < numLines; i++) {
-            returned += "\n";
+        for (int i = 0; i < numChoices; i++) {
+            returned += "\n" + choices[i];
         }
         return returned;
     }
