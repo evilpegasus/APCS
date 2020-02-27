@@ -13,9 +13,11 @@ public class MultChoice extends TestQuestion {
     private String choices[];
 
     public void readQuestion() throws FileNotFoundException {
-        File file = new File("testbank.dat");
+        File file = new File("Chapter7/Labs/testbank.dat");
         Scanner scan = new Scanner(file);
         numChoices = Integer.valueOf(scan.nextLine());
+        scan.nextLine();
+        scan.nextLine();
         testQuestion = scan.nextLine();
         String choices[] = new String[numChoices];
         for (int i = 0; i < numChoices; i++) {

@@ -11,9 +11,11 @@ public class Essay extends TestQuestion {
     protected String testQuestion;
     private int numLines;
     public void readQuestion() throws FileNotFoundException {
-        File file = new File("testbank.dat");
+        File file = new File("Chapter7/Labs/testbank.dat");
         Scanner scan = new Scanner(file);
         numLines = Integer.valueOf(scan.nextLine());
+        scan.nextLine();
+        scan.nextLine();
         testQuestion = scan.nextLine();
     }
 
