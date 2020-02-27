@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 // **********************************************************
 // Player.java
 //
@@ -18,8 +20,7 @@ public class Player
     // jersey number.
     //-----------------------------------------------------------
 
-    public void readPlayer()
-    {
+    public void readPlayer() {
 	Scanner scan = new Scanner(System.in);
 	System.out.print("Name: ");
 	name = scan.nextLine();
@@ -27,6 +28,14 @@ public class Player
 	team = scan.nextLine();
 	System.out.print("Jersey number: ");
 	jerseyNumber = scan.nextInt();
+    }
+
+    public boolean equals(Player x) {
+        if (name.equals(x.name) && team.equals(x.team) && jerseyNumber == x.jerseyNumber) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
