@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 //********************************************************************
 //  Hourly.java       Author: Lewis/Loftus
 //

@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 //********************************************************************
 //  Staff.java       Author: Lewis/Loftus
 //
@@ -13,7 +15,7 @@ public class Staff
    //-----------------------------------------------------------------
    public Staff ()
    {
-      staffList = new StaffMember[6];
+      staffList = new StaffMember[8];
 
       staffList[0] = new Executive ("Sam", "123 Main Line",
          "555-0469", "123-45-6789", 2423.07);
@@ -30,6 +32,16 @@ public class Staff
          "555-8374");
       staffList[5] = new Volunteer ("Cliff", "321 Duds Lane",
          "555-7282");
+         
+      staffList[6] = new Commission("JJ", "123 2nd st.", "1234-512", "1234567", 6.25, .2);
+      staffList[7] = new Commission("Joe", "1234 4rd", "24356-324", "56345", 9.75, .15);
+
+      ((Commission)staffList[6]).addHours(35);
+      ((Commission)staffList[6]).addSales(400);
+      
+      ((Commission)staffList[7]).addHours(40);
+      ((Commission)staffList[7]).addSales(950);
+
 
       ((Executive)staffList[0]).awardBonus (500.00);
 

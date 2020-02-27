@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 //********************************************************************
 //  StaffMember.java       Author: Lewis/Loftus
 //

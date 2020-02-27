@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 //********************************************************************
 //  Volunteer.java       Author: Lewis/Loftus
 //

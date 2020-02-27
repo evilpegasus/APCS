@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 //********************************************************************
 //  Employee.java       Author: Lewis/Loftus
 //

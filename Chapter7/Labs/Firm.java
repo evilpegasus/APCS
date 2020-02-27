@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 //********************************************************************
 //  Firm.java       Author: Lewis/Loftus
 //
