@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 import java.util.*;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,14 +10,10 @@ public class Essay extends TestQuestion {
 
     protected String testQuestion;
     private int numLines;
-    public void readQuestion() {
+    public void readQuestion() throws FileNotFoundException {
         File file = new File("testbank.dat");
-        try {
-            Scanner scan = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        numLines = Integer.toString(scan.nextLine());
+        Scanner scan = new Scanner(file);
+        numLines = Integer.valueOf(scan.nextLine());
         testQuestion = scan.nextLine();
     }
 
