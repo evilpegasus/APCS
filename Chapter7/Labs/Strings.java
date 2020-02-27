@@ -6,7 +6,7 @@
 
 import java.util.Scanner;
 
-public class Numbers
+public class Strings
 {
     // --------------------------------------------
     //  Reads in an array of integers, sorts them,
@@ -14,24 +14,24 @@ public class Numbers
     // --------------------------------------------
     public static void main (String[] args)
     {
-        Comparable[] intList;
+        Comparable[] stringList;
         int size;
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.print ("\nHow many integers do you want to sort? ");
+        System.out.print ("\nHow many strings do you want to sort? ");
         size = scan.nextInt();
-        intList = new Comparable[size];
+        stringList = new Comparable[size];
 
-        System.out.println ("\nEnter the numbers...");
+        System.out.println ("\nEnter the strings...");
         for (int i = 0; i < size; i++)
-            intList[i] = scan.nextInt();
+            stringList[i] = scan.nextLine();
 
-        Sorting.insertionSort(intList);
+        Sorting.insertionSort(stringList);
 
         System.out.println ("\nYour numbers in sorted order...");
         for (int i = 0; i < size; i++)
-            System.out.print(intList[i] + "  ");
-        System.out.println();
+            System.out.print(stringList[i] + "  ");
+        System.out.println ();
     }
 }
