@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 import java.util.*;
 
 public class SortIntList extends IntList{
@@ -5,22 +7,29 @@ public class SortIntList extends IntList{
         super(size);
     }
 
-    public void add(int x) {
-        if (numElements == list.length)
-	    System.out.println("Can't add, list is full");
-	    else {
-            list[numElements] = x;
-		    Arrays.sort(list, 0, numElements + 1);
+    public void add(int value) {
+    if (numElements == list.length)
+        System.out.println("Can't add, list is full");
+    else if (numElements == 0) {
+        list[0] = value;
+        numElements++;
+    }
+	else {
+            boolean addedValue = false;
+            for (int y = 0; y < numElements; y++) { 
+                if (value < list[y]) {
+                    for (int x = list.length - 1; x > y; x--) {
+                        list[x] = list[x - 1];
+                    }
+                    list[y] = value;
+                    addedValue = true;
+                    break;
+                }
+            }
+            if (addedValue == false) {
+                list[numElements] = value;
+            }
             numElements++;
-            // for (int i = 0; i < numElements; i++) {
-            //     if (list[i] < list[i + 1]) {
-            //         for (int j = numElements; j > i; j++) {
-            //             list[j] = list [j - 1];
-            //         }
-            //         list[i] = x;
-            //         break;
-            //     }
-            //     numElements++;
-        }
+	    }
     }
 }
