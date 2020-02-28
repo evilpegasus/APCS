@@ -8,7 +8,7 @@ public class WeeklySales
 {
     public static void main(String[] args)
     {
-        Salesperson[] salesStaff = new Salesperson[10];
+        Comparable[] salesStaff = new Salesperson[10];
 
         salesStaff[0] = new Salesperson("Jane", "Jones", 3000); 
         salesStaff[1] = new Salesperson("Daffy", "Duck", 4935); 
@@ -25,7 +25,7 @@ public class WeeklySales
 
         System.out.println ("\nRanking of Sales for the Week\n");
 
-        for (Salesperson s : salesStaff)
+        for (Salesperson s : ((Salesperson[])salesStaff))
             System.out.println (s);
     }
 }

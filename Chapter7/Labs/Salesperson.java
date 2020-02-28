@@ -47,8 +47,14 @@ public class Salesperson implements Comparable
     public int compareTo(Object other)
     {
         int result;
-
-        return result;
+            if(totalSales > ((Salesperson)other).getSales()) {
+                result = 1;
+            } else if(getSales() > ((Salesperson)other).getSales()) {
+                result = -1;
+            } else {
+                result = lastName.compareTo(((Salesperson)other).getLastName());
+            }
+            return result;
     }
  
 
