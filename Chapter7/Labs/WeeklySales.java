@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 // *************************************************************
 //    WeeklySales.java
 //
@@ -23,9 +25,12 @@ public class WeeklySales
 
         Sorting.insertionSort(salesStaff);
 
-        System.out.println ("\nRanking of Sales for the Week\n");
+        System.out.println("\nRanking of Sales for the Week\n");
 
-        for (Salesperson s : ((Salesperson[])salesStaff))
-            System.out.println (s);
+        for (int i = 0; i < salesStaff.length; i++) {
+            System.out.println(salesStaff[i]);
+            //System.out.println (s);
+        }
+            
     }
 }

@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 // *******************************************************
 //   Salesperson.java
 //
@@ -44,17 +46,22 @@ public class Salesperson implements Comparable
     //  Order is based on total sales with the name
     //  (last, then first) breaking a tie.
     //--------------------------------------------------
-    public int compareTo(Object other)
-    {
-        int result;
-            if(totalSales > ((Salesperson)other).getSales()) {
-                result = 1;
-            } else if(getSales() > ((Salesperson)other).getSales()) {
-                result = -1;
-            } else {
-                result = lastName.compareTo(((Salesperson)other).getLastName());
-            }
-            return result;
+    public int compareTo(Object other) {
+        if(totalSales > ((Salesperson)other).getSales()) {
+            return 1;
+        } else if(totalSales < ((Salesperson)other).getSales()) {
+            return -1;
+        } else if(lastName.compareTo(((Salesperson)other).getLastName()) > 0) {
+            return 1;
+        } else if(lastName.compareTo(((Salesperson)other).getLastName()) < 0) {
+            return -1;
+        } else if(firstName.compareTo(((Salesperson)other).getFirstName()) > 0) {
+            return 1;
+        } else if(firstName.compareTo(((Salesperson)other).getFirstName()) < 0) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
  
 

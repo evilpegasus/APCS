@@ -1,3 +1,5 @@
+package Chapter7.Labs;
+
 //********************************************************************
 //  Sorting.java       Author: Lewis/Loftus
 //
