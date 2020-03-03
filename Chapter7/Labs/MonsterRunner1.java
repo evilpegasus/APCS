@@ -1,4 +1,4 @@
-package Chapter7.Labs;
+package Labs;
 
 //(c) A+ Computer Science
 //www.apluscompsci.com
@@ -7,7 +7,7 @@ package Chapter7.Labs;
 import java.util.Scanner;
 import static java.lang.System.*;
 
-public class MonsterRunner
+public class MonsterRunner1
 {
 	public static void main( String args[] )
 	{
