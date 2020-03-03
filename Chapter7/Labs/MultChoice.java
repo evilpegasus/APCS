@@ -6,30 +6,33 @@ import java.io.FileNotFoundException;
 
 
 public class MultChoice extends TestQuestion {
+    String[] s;
+    private Scanner scan;
+    String testQuestion;
 
+    public MultChoice(int num, Scanner scan) {
+        s = new String[num];
+        this.scan = scan;
+        readQuestion();
+    }
 
-    protected String testQuestion;
-    private int numChoices;
-    private String choices[];
-
-    public void readQuestion() throws FileNotFoundException {
-        File file = new File("Chapter7/Labs/testbank.dat");
-        Scanner scan = new Scanner(file);
-        numChoices = Integer.valueOf(scan.nextLine());
-        scan.nextLine();
-        scan.nextLine();
+    public void readQuestion() {
         testQuestion = scan.nextLine();
-        String choices[] = new String[numChoices];
-        for (int i = 0; i < numChoices; i++) {
-            choices[i] = scan.nextLine();
+
+        for (int k = 0; k < s.length; k++) {
+            s[k] = scan.nextLine();
         }
     }
 
     public String toString() {
-        String returned = testQuestion;
-        for (int i = 0; i < numChoices; i++) {
-            returned += "\n" + choices[i];
+        String ans = "";
+        int letter = 97;
+
+        for (int i = 0; i < s.length; i++) {
+            ans += (char) letter + ") " + s[i] + "\n";
+            letter++;
         }
-        return returned;
+
+        return testQuestion + "\n" + ans + "\n";
     }
 }

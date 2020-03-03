@@ -4,47 +4,43 @@ package Labs;
 //www.apluscompsci.com
 //Name -
 
-import java.util.Scanner;
 import static java.lang.System.*;
 
 public class MonsterRunner1
 {
-	public static void main( String args[] )
-	{
-		Scanner scan = new Scanner(System.in);
-		
-		//ask for name and size
-		System.out.println("Size 1?");
-		int size1 = scan.nextInt();
-		System.out.println("Name 1?");
-		String name1 = scan.nextLine();	//There's a line break issue that's skipping the input for name but the rest works fine
-		//instantiate monster one
-		Skeleton s1 = new Skeleton(size1, name1);
-		//ask for name and size
-		System.out.println("Size 2?");
-		int size2 = scan.nextInt();
-		System.out.println("Name 2?");
-		String name2 = scan.nextLine();
-		//instantiate monster two
-		Skeleton s2 = new Skeleton(size2, name2);
+   public static void main( String args[] )
+   {
+		Monster1 zero = new Monster1();
+		Monster1 one = new Monster1(8);
+		Monster1 sue = new Monster1(9, 4);
+		Monster1 harry = new Monster1(1, 2, 3);
+		out.println("\nzero Monster1 :: " + zero);		
+		out.println("\none Monster1 :: " + one);
+		out.println("\nsue Monster1 :: " + sue);
+		out.println("\nharry Monster1 :: " + harry);
 
-		System.out.println(s1);
-		System.out.println(s2);
+		out.println("\nchanging harry's properties ");				
+		harry.setHeight(7);
+		harry.setWeight(6);
+		harry.setAge(5);
+		out.println("\nharry Monster1 :: " + harry);
 
-		String compareSize;
-		if (s1.isBigger(s2)) {
-			compareSize = "larger than ";
-		} else if (!s1.isBigger(s2)) {
-			compareSize = "smaller than ";
-		} else {
-			compareSize = "the same size as ";
-		}
-		System.out.println("Monster 1 is " + compareSize + "monster 2.");
+		out.println("\ncloning harry");	
+		sue = (Monster1)harry.clone();
+		out.println("\nsue Monster1 :: " + sue);
 
-		if (s1.namesTheSame(s2)) {
-			System.out.println("They have the same names.");
-		} else {
-			System.out.println("They do not have the same names.");
-		}
+		Monster1 mOne = new Monster1(33,33,11);
+		Monster1 mTwo = new Monster1(55,33,11);
+
+		out.println("\nMonster1 1 :: " + mOne);
+		out.println("\nMonster1 2 :: " + mTwo);
+
+		out.print("\nmOne.equals(mTwo) == ");
+		out.println(mOne.equals(mTwo));
+
+		out.print("\nmOne.compareTo(mTwo) == ");
+		out.println(mOne.compareTo(mTwo));
+		out.print("\nmTwo.compareTo(mOne) == ");
+		out.println(mTwo.compareTo(mOne));
 	}
 }

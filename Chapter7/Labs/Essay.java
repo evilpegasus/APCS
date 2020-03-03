@@ -1,29 +1,30 @@
 package Chapter7.Labs;
 
 import java.util.*;
-import java.io.File;
-import java.io.FileNotFoundException;
 
 
 public class Essay extends TestQuestion {
+    protected int numLines;
+    private Scanner scan;
+    String testQuestion;
 
+    public Essay(int numLines, Scanner scan) {
+        this.numLines = numLines;
+        this.scan = scan;
+        readQuestion();
+    }
 
-    protected String testQuestion;
-    private int numLines;
-    public void readQuestion() throws FileNotFoundException {
-        File file = new File("Chapter7/Labs/testbank.dat");
-        Scanner scan = new Scanner(file);
-        numLines = Integer.valueOf(scan.nextLine());
-        scan.nextLine();
-        scan.nextLine();
+    public void readQuestion() {
         testQuestion = scan.nextLine();
     }
 
     public String toString() {
-        String returned = testQuestion;
-        for (int i = 0; i < numLines; i++) {
-            returned += "\n";
+        String lines = "";
+
+        for (int i = -1; i < numLines; i++) {
+            lines += "\n";
         }
-        return returned;
+
+        return testQuestion + lines;
     }
 }
