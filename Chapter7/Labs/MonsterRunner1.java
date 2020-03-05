@@ -1,4 +1,4 @@
-package Chapter7.Labs;
+package Labs;
 
 //(c) A+ Computer Science
 //www.apluscompsci.com
