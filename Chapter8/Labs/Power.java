@@ -1,3 +1,5 @@
+package Chapter8.Labs;
+
 // ****************************************************************
 //   Power.java
 //
@@ -38,11 +40,14 @@ public class Power
     {
 	int pow;
 
-	//if the exponent is 0, set pow to 1	
-
+	//if the exponent is 0, set pow to 1
+	if (exp == 0) {
+		pow = 1;
+	} else {
 	//otherwise set pow to base*base^(exp-1)
-
-	//return pow	
-
+	pow = base * power(base, exp - 1);
+	}
+	//return pow
+	return pow;
     }
 }
