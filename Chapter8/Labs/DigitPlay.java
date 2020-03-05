@@ -1,3 +1,5 @@
+package Chapter8.Labs;
+
 // *******************************************************************
 //   DigitPlay.java
 // 
@@ -40,5 +42,9 @@ public class DigitPlay
 	    return (1);
 	else
 	    return (1 + numDigits(num/10));
-    }
+	}
+	
+	public static int sumDigits(int num) {
+		
+	}
 }
