@@ -1,0 +1,7 @@
+1. Can you identify keywords to which your chatbot responds?
+
+When the user types "no", the chatbot responds with "Why not?"
+
+2. Think of several keywords and the responses they might cause.
+
+"Hi", "Hello", or a similar greeting has the same reponse. The bot asks for your name.
