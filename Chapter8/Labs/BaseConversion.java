@@ -1,3 +1,5 @@
+package Chapter8.Labs;
+
 // ******************************************************************
 //   BaseConversion.java
 //
@@ -23,7 +25,8 @@ public class BaseConversion
 	base = scan.nextInt();
 
 	// Call convert and print the answer
-	
+	System.out.println("Answer: ");
+	System.out.println(convert(base10Num, base));
     }
     // --------------------------------------------------
     //   Converts a base 10 number to another base.
@@ -32,6 +35,15 @@ public class BaseConversion
     {
 	int quotient;  // the quotient when num is divided by base b
 	int remainder; // the remainder when num is divided by base b
+
+	quotient = num / b;
+	remainder = num % b;
+
+	if (num < b) {
+		return ("" + num);
+	} else {
+		return (convert(quotient, b) + remainder);
+	}
     }
 
 }
